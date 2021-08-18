@@ -1,15 +1,15 @@
 <template>
-    <div class="headbar"  flex jc ac ht-xs ht-8 sm catskill lighten>
+    <div class="headbar"  flex jc ac sm catskill lighten>
             Quick archetype for Vue3, CSS in Attribute and best parctises.
     </div>
     <div flex fill style="height: calc(100% - 40px)">
         <div class="sidebar" col-10 flex je>
             <!--侧栏容器-->
-            <div wd-md wd-22 pt-sm pt-5>
+            <div class="wrapper">
                 <!--分组-->
                 <div v-for="(group, groupName) in sidebar" py-sm py-7 bb>
                     <h6 sm grey lighten mb-xs mb-3>{{ groupName }}</h6>
-                    <router-link v-for="item in group" :to="item.path" xs ht-xs ht-1 ac
+                    <router-link v-for="item in group" :to="item.path" xs
                                  :class="{current: current === item.path}"
                                  @click="current = item.path"
                     >
@@ -48,6 +48,7 @@ export default {
 <style scoped lang="scss">
 div.headbar{
     background-color: #0D8050;
+    height: 38px;
     div.smallTitle{
         font-size: 12px;
         transform: scale(.85);
@@ -57,13 +58,20 @@ div.headbar{
 
 div.sidebar{
     user-select: none;
+    div.wrapper{
+        width: 160px;
+    }
     a{
+        height: 28px;
+        line-height: 28px;
         letter-spacing: .5px;
         color: rgba(0,0,0,.7);
         display: block;
         text-decoration: none;
+        padding: 2px 8px;
         &:hover{
-            font-weight: bold;
+            //font-weight: bold;
+            background-color: rgba(0,0,0,.06);
         }
         &.current{
             color: #0D8050;

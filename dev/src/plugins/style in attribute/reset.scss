@@ -70,11 +70,11 @@ q::before,q::after{
   content: '';
 }
 p{
-  margin:10px 0;
+  margin:10px 0 12px 0;
   letter-spacing: .5px;
   word-break: break-all;
   word-wrap: break-word;
-  line-height: 1.6px;
+  line-height: 1.6;
   &:first-child{
     margin-top: 0;
   }
@@ -230,5 +230,6 @@ select::-ms-value {
   color: currentColor; /* Internet Explorer 11+ */
 }
 img {
+  object-fit: cover;
   border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
 }
